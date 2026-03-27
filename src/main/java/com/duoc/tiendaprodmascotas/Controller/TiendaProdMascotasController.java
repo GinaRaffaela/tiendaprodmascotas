@@ -3,6 +3,7 @@ package com.duoc.tiendaprodmascotas.Controller;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -75,7 +76,13 @@ public class TiendaProdMascotasController {
     //Metodo para eliminar orden de compra
     @GetMapping("/eliminarOrden/{idOrden}")
     public String getEliminarOrden(@PathVariable int idOrden) {
-        return "Orden " + idOrden + "Eliminada Correctamente";
+        for (OrdenCompraDTO ordenCompraDTO : ordenesCompra) {
+            if (ordenCompraDTO.getIdOrden() == idOrden) {
+                ordenesCompra.remove(ordenCompraDTO);
+                return "Orden " + idOrden + " Eliminada Correctamente";
+            }
+        }
+        return "Orden " + idOrden + " no existe";
     }
 
     //Metodo para modificar orden de compra para agregar o eliminar productos
@@ -93,26 +100,31 @@ public class TiendaProdMascotasController {
                                 return "Orden Modificada Correctamente, se agrega nuevo producto";
                             }
                         }
+                        return "Producto no encontrado";
                     }
                 }
-                break;
+                return "Orden no encontrada";
             case 2: // Accion con id 2 para eliminar productos
                 for (OrdenCompraDTO ordenCompra : ordenesCompra) {
                     if (ordenCompra.getIdOrden() == idOrden) {
-                        for (ProductosDTO producto : ordenCompra.getProducto()) {
+                        Iterator<ProductosDTO> iterator = ordenCompra.getProducto().iterator();
+
+                        while (iterator.hasNext()) {
+                            ProductosDTO producto = iterator.next();
                             if (producto.getIdProducto() == idProducto) {
                                 ordenCompra.setTotalCompra(ordenCompra.getTotalCompra() - producto.getPrecio());
-                                ordenCompra.getProducto().remove(idProducto);
+                                iterator.remove();
                                 return "Orden Modificada Correctamente, se elimina producto";
                             }
                         }
+
+                        return "Producto no existe dentro de la orden";
                     }
                 }
-                break;
+                return "Orden no encontrada";
             default:
                 return "Operacion Incorrecta, ingrese 1 o 2";
         }
-        return "No se pudo modificar orden de compra por idOrden o idProducto incorrecto";
     }
 
     //Metodo para cambiar el estado de la orden de compra a pagado
