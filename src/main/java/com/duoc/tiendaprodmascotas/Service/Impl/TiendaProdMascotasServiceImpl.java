@@ -87,6 +87,7 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
         OrdenProducto item = new OrdenProducto();
         item.setOrden(orden);
         item.setProducto(producto);
+        orden.getItems().add(item);
 
         ordenProductoRepository.save(item);
 
@@ -143,20 +144,19 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
         return mapToDTO(ordenCompraRepository.save(orden));
     }
 
-    private OrdenCompraDTO mapToDTO(OrdenCompra o) {
-        List<ProductosDTO> productos = o.getProducto().stream()
-                .map(i -> new ProductosDTO(
-                        i.getProducto().getIdProducto(),
-                        i.getProducto().getNombre(),
-                        i.getProducto().getDescripcion(),
-                        i.getProducto().getPrecio()))
-                .collect(Collectors.toList());
+    List<ProductosDTO> productos = o.getItems().stream()
+            .map(i -> new ProductosDTO(
+                    i.getProducto().getIdProducto(),
+                    i.getProducto().getNombre(),
+                    i.getProducto().getDescripcion(),
+                    i.getProducto().getPrecio()))
+            .collect(Collectors.toList());
 
-        return new OrdenCompraDTO(
-                o.getIdOrden(),
-                o.getFechaCompra(),
-                productos,
-                o.getTotalCompra(),
-                o.getEstado());
+    return new OrdenCompraDTO(
+            o.getIdOrden(),
+            o.getFechaCompra(),
+            productos,
+            o.getTotalCompra(),
+            o.getEstado());
     }
 }
