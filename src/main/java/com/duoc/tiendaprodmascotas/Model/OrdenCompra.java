@@ -1,6 +1,9 @@
 package com.duoc.tiendaprodmascotas.Model;
 
+import java.time.LocalDate;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -28,7 +31,7 @@ public class OrdenCompra {
     private List<OrdenProducto> items = new ArrayList<>();
 
     @Column(name = "totalCompra")
-    private int totalCompra;
+    private Integer totalCompra;
 
     @Column(name = "estado")
     private String estado;
@@ -57,11 +60,11 @@ public class OrdenCompra {
         this.items = items;
     }
 
-    public int getTotalCompra() {
+    public Integer getTotalCompra() {
         return totalCompra;
     }
 
-    public void setTotalCompra(int totalCompra) {
+    public void setTotalCompra(Integer totalCompra) {
         this.totalCompra = totalCompra;
     }
 
