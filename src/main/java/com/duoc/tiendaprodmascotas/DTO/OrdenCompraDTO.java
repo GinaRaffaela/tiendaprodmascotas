@@ -7,15 +7,16 @@ public class OrdenCompraDTO {
     // Variables
     private Long idOrden;
     private String fechaCompra;
-    private ProductosDTO producto;
+    private List<ProductosDTO> productos;
     private int totalCompra;
     private String estado;
 
     // Constructor
-    public OrdenCompraDTO(Long idOrden, String fechaCompra, ProductosDTO producto, int totalCompra, String estado) {
+    public OrdenCompraDTO(Long idOrden, String fechaCompra, List<ProductosDTO> productos, int totalCompra,
+            String estado) {
         this.idOrden = idOrden;
         this.fechaCompra = fechaCompra;
-        this.producto = producto;
+        this.productos = productos;
         this.totalCompra = totalCompra;
         this.estado = estado;
     }
@@ -37,12 +38,12 @@ public class OrdenCompraDTO {
         this.fechaCompra = fechaCompra;
     }
 
-    public ProductosDTO getProducto() {
-        return producto;
+    public List<ProductosDTO> getProductos() {
+        return productos;
     }
 
-    public void setProducto(ProductosDTO producto) {
-        this.producto = producto;
+    public void setProductos(List<ProductosDTO> productos) {
+        this.productos = productos;
     }
 
     public int getTotalCompra() {

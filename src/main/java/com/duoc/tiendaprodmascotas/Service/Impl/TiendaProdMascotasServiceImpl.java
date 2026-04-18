@@ -3,6 +3,7 @@ package com.duoc.tiendaprodmascotas.Service.Impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,8 +11,10 @@ import com.duoc.tiendaprodmascotas.DTO.OrdenCompraDTO;
 import com.duoc.tiendaprodmascotas.DTO.ProductosDTO;
 import com.duoc.tiendaprodmascotas.Exception.ResourceNotFoundException;
 import com.duoc.tiendaprodmascotas.Model.OrdenCompra;
+import com.duoc.tiendaprodmascotas.Model.OrdenProducto;
 import com.duoc.tiendaprodmascotas.Model.Productos;
 import com.duoc.tiendaprodmascotas.Repository.OrdenCompraRepository;
+import com.duoc.tiendaprodmascotas.Repository.OrdenProductoRepository;
 import com.duoc.tiendaprodmascotas.Repository.ProductosRepository;
 import com.duoc.tiendaprodmascotas.Service.TiendaProdMascotasService;
 
@@ -21,8 +24,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService {
 
+    @Autowired
     private final ProductosRepository productosRepository;
+    @Autowired
     private final OrdenCompraRepository ordenCompraRepository;
+    @Autowired
+    private final OrdenProductoRepository ordenProductoRepository;
 
     @Override
     public List<ProductosDTO> getProductos() {
@@ -37,18 +44,10 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
     public OrdenCompraDTO crearOrden(OrdenCompraDTO ordenCompraDTO) {
         OrdenCompra orden = new OrdenCompra();
         orden.setFechaCompra(ordenCompraDTO.getFechaCompra());
-        
-        if (ordenCompraDTO.getProducto() != null && ordenCompraDTO.getProducto().getIdProducto() != null) {
-            Productos producto = productosRepository.findById(ordenCompraDTO.getProducto().getIdProducto())
-                    .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado con id: " + ordenCompraDTO.getProducto().getIdProducto()));
-            orden.setProducto(producto);
-        }
-        
-        orden.setTotalCompra(ordenCompraDTO.getTotalCompra());
+        orden.setTotalCompra(0);
         orden.setEstado(ordenCompraDTO.getEstado() != null ? ordenCompraDTO.getEstado() : "Por Pagar");
 
-        OrdenCompra saved = ordenCompraRepository.save(orden);
-        return mapToDTO(saved);
+        return mapToDTO(ordenCompraRepository.save(orden));
     }
 
     @Override
@@ -78,14 +77,20 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
     @Override
     @Transactional
     public OrdenCompraDTO agregarProducto(Long idOrden, Long idProducto) {
+
         OrdenCompra orden = ordenCompraRepository.findById(idOrden)
                 .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada con id: " + idOrden));
 
         Productos producto = productosRepository.findById(idProducto)
                 .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado con id: " + idProducto));
 
-        orden.setProducto(producto);
-        orden.setTotalCompra(producto.getPrecio());
+        OrdenProducto item = new OrdenProducto();
+        item.setOrden(orden);
+        item.setProducto(producto);
+
+        ordenProductoRepository.save(item);
+
+        orden.setTotalCompra(orden.getTotalCompra() + producto.getPrecio());
 
         return mapToDTO(ordenCompraRepository.save(orden));
     }
@@ -94,14 +99,18 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
     @Transactional
     public OrdenCompraDTO eliminarProducto(Long idOrden, Long idProducto) {
         OrdenCompra orden = ordenCompraRepository.findById(idOrden)
-                .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada con id: " + idOrden));
+                .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada"));
 
-        if (orden.getProducto() != null && orden.getProducto().getIdProducto().equals(idProducto)) {
-            orden.setProducto(null);
-            orden.setTotalCompra(0);
-        } else {
-            throw new ResourceNotFoundException("Producto no existe dentro de la orden con id: " + idProducto);
-        }
+        List<OrdenProducto> items = ordenProductoRepository.findByOrdenIdOrden(idOrden);
+
+        OrdenProducto item = items.stream()
+                .filter(i -> i.getProducto().getIdProducto().equals(idProducto))
+                .findFirst()
+                .orElseThrow(() -> new ResourceNotFoundException("Producto no está en la orden"));
+
+        ordenProductoRepository.delete(item);
+
+        orden.setTotalCompra(orden.getTotalCompra() - item.getProducto().getPrecio());
 
         return mapToDTO(ordenCompraRepository.save(orden));
     }
@@ -135,16 +144,19 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
     }
 
     private OrdenCompraDTO mapToDTO(OrdenCompra o) {
-        ProductosDTO productoDTO = null;
-        if (o.getProducto() != null) {
-            productoDTO = new ProductosDTO(
-                    o.getProducto().getIdProducto(),
-                    o.getProducto().getNombre(),
-                    o.getProducto().getDescripcion(),
-                    o.getProducto().getPrecio()
-            );
-        }
-        return new OrdenCompraDTO(o.getIdOrden(), o.getFechaCompra(), productoDTO, o.getTotalCompra(),
+        List<ProductosDTO> productos = o.getProducto().stream()
+                .map(i -> new ProductosDTO(
+                        i.getProducto().getIdProducto(),
+                        i.getProducto().getNombre(),
+                        i.getProducto().getDescripcion(),
+                        i.getProducto().getPrecio()))
+                .collect(Collectors.toList());
+
+        return new OrdenCompraDTO(
+                o.getIdOrden(),
+                o.getFechaCompra(),
+                productos,
+                o.getTotalCompra(),
                 o.getEstado());
     }
 }

@@ -1,14 +1,14 @@
 package com.duoc.tiendaprodmascotas.Model;
 
-import com.duoc.tiendaprodmascotas.DTO.ProductosDTO;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,9 +23,8 @@ public class OrdenCompra {
     @Column(name = "fechaCompra")
     private String fechaCompra;
 
-    @ManyToOne
-    @JoinColumn(name = "idProducto")
-    private Productos producto;
+    @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL)
+    private List<OrdenProducto> productos;
 
     @Column(name = "totalCompra")
     private int totalCompra;
@@ -49,12 +48,12 @@ public class OrdenCompra {
         this.fechaCompra = fechaCompra;
     }
 
-    public Productos getProducto() {
-        return producto;
+    public List<OrdenProducto> getProducto() {
+        return productos;
     }
 
-    public void setProducto(Productos producto) {
-        this.producto = producto;
+    public void setProducto(List<OrdenProducto> productos) {
+        this.productos = productos;
     }
 
     public int getTotalCompra() {
