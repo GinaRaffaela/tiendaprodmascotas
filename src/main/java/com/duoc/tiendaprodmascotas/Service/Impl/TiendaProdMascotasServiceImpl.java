@@ -100,20 +100,19 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
     @Transactional
     public OrdenCompraDTO eliminarProducto(Long idOrden, Long idProducto) {
         OrdenCompra orden = ordenCompraRepository.findById(idOrden)
-                .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada"));
+            .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada"));
 
-        List<OrdenProducto> items = ordenProductoRepository.findByOrdenIdOrden(idOrden);
+    OrdenProducto item = orden.getItems().stream()
+            .filter(i -> i.getProducto().getIdProducto().equals(idProducto))
+            .findFirst()
+            .orElseThrow(() -> new ResourceNotFoundException("Producto no está en la orden"));
 
-        OrdenProducto item = items.stream()
-                .filter(i -> i.getProducto().getIdProducto().equals(idProducto))
-                .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Producto no está en la orden"));
+  
+    orden.getItems().remove(item);
 
-        ordenProductoRepository.delete(item);
+    orden.setTotalCompra(orden.getTotalCompra() - item.getProducto().getPrecio());
 
-        orden.setTotalCompra(orden.getTotalCompra() - item.getProducto().getPrecio());
-
-        return mapToDTO(ordenCompraRepository.save(orden));
+    return mapToDTO(ordenCompraRepository.save(orden));
     }
 
     @Override
