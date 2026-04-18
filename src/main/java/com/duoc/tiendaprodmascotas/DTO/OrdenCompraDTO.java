@@ -1,18 +1,19 @@
 package com.duoc.tiendaprodmascotas.DTO;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class OrdenCompraDTO {
 
     // Variables
     private Long idOrden;
-    private String fechaCompra;
+    private LocalDate fechaCompra;
     private List<ProductosDTO> productos;
-    private int totalCompra;
+    private Integer totalCompra;
     private String estado;
 
     // Constructor
-    public OrdenCompraDTO(Long idOrden, String fechaCompra, List<ProductosDTO> productos, int totalCompra,
+    public OrdenCompraDTO(Long idOrden, LocalDate fechaCompra, List<ProductosDTO> productos, Integer totalCompra,
             String estado) {
         this.idOrden = idOrden;
         this.fechaCompra = fechaCompra;
@@ -30,11 +31,11 @@ public class OrdenCompraDTO {
         this.idOrden = id;
     }
 
-    public String getFechaCompra() {
+    public LocalDate getFechaCompra() {
         return fechaCompra;
     }
 
-    public void setFechaCompra(String fechaCompra) {
+    public void setFechaCompra(LocalDate fechaCompra) {
         this.fechaCompra = fechaCompra;
     }
 
@@ -46,11 +47,11 @@ public class OrdenCompraDTO {
         this.productos = productos;
     }
 
-    public int getTotalCompra() {
+    public Integer getTotalCompra() {
         return totalCompra;
     }
 
-    public void setTotalCompra(int totalCompra) {
+    public void setTotalCompra(Integer totalCompra) {
         this.totalCompra = totalCompra;
     }
 
