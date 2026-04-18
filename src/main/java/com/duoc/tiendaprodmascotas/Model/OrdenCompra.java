@@ -21,7 +21,8 @@ public class OrdenCompra {
     private Long idOrden;
 
     @Column(name = "fechaCompra")
-    private String fechaCompra;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaCompra;
 
     @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrdenProducto> items = new ArrayList<>();
@@ -40,11 +41,11 @@ public class OrdenCompra {
         this.idOrden = idOrden;
     }
 
-    public String getFechaCompra() {
+    public LocalDate getFechaCompra() {
         return fechaCompra;
     }
 
-    public void setFechaCompra(String fechaCompra) {
+    public void setFechaCompra(LocalDate fechaCompra) {
         this.fechaCompra = fechaCompra;
     }
 
