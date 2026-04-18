@@ -23,8 +23,8 @@ public class OrdenCompra {
     @Column(name = "fechaCompra")
     private String fechaCompra;
 
-    @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL)
-    private List<OrdenProducto> productos;
+    @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrdenProducto> items = new ArrayList<>();
 
     @Column(name = "totalCompra")
     private int totalCompra;
@@ -48,12 +48,12 @@ public class OrdenCompra {
         this.fechaCompra = fechaCompra;
     }
 
-    public List<OrdenProducto> getProducto() {
-        return productos;
+    public List<OrdenProducto> getItems() {
+        return items;
     }
 
-    public void setProducto(List<OrdenProducto> productos) {
-        this.productos = productos;
+    public void setItems(List<OrdenProducto> items) {
+        this.items = items;
     }
 
     public int getTotalCompra() {
