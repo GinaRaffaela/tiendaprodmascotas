@@ -1,27 +1,31 @@
-package com.duoc.tiendaprodmascotas.DTO;
+package com.duoc.tiendaprodmascotas.Model;
 
-public class ProductosDTO {
-    
-    //Variables
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "productos")
+public class Productos {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idProducto")
     private Long idProducto;
+    @Column(name ="nombre")
     private String nombre;
+    @Column(name ="descripcion")
     private String descripcion;
+    @Column(name ="precio")
     private int precio;
-
-    //Constructor
-    public ProductosDTO(Long idProducto, String nombre, String descripcion, int precio) {
-        this.idProducto = idProducto;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precio = precio;
-    }
-
-    //Getters y Setters
+    
     public Long getIdProducto() {
         return idProducto;
     }
-    public void setIdProducto(Long id) {
-        this.idProducto = id;
+    public void setIdProducto(Long idProducto) {
+        this.idProducto = idProducto;
     }
     public String getNombre() {
         return nombre;
