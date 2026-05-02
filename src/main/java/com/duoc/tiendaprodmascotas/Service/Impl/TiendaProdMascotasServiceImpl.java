@@ -87,7 +87,6 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
         OrdenProducto item = new OrdenProducto();
         item.setOrden(orden);
         item.setProducto(producto);
-        orden.getItems().add(item);
 
         ordenProductoRepository.save(item);
 
@@ -100,19 +99,20 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
     @Transactional
     public OrdenCompraDTO eliminarProducto(Long idOrden, Long idProducto) {
         OrdenCompra orden = ordenCompraRepository.findById(idOrden)
-            .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada"));
+                .orElseThrow(() -> new ResourceNotFoundException("Orden no encontrada"));
 
-    OrdenProducto item = orden.getItems().stream()
-            .filter(i -> i.getProducto().getIdProducto().equals(idProducto))
-            .findFirst()
-            .orElseThrow(() -> new ResourceNotFoundException("Producto no está en la orden"));
+        List<OrdenProducto> items = ordenProductoRepository.findByOrdenIdOrden(idOrden);
 
-  
-    orden.getItems().remove(item);
+        OrdenProducto item = items.stream()
+                .filter(i -> i.getProducto().getIdProducto().equals(idProducto))
+                .findFirst()
+                .orElseThrow(() -> new ResourceNotFoundException("Producto no está en la orden"));
 
-    orden.setTotalCompra(orden.getTotalCompra() - item.getProducto().getPrecio());
+        ordenProductoRepository.delete(item);
 
-    return mapToDTO(ordenCompraRepository.save(orden));
+        orden.setTotalCompra(orden.getTotalCompra() - item.getProducto().getPrecio());
+
+        return mapToDTO(ordenCompraRepository.save(orden));
     }
 
     @Override
@@ -143,19 +143,37 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
         return mapToDTO(ordenCompraRepository.save(orden));
     }
 
-    List<ProductosDTO> productos = o.getItems().stream()
-            .map(i -> new ProductosDTO(
-                    i.getProducto().getIdProducto(),
-                    i.getProducto().getNombre(),
-                    i.getProducto().getDescripcion(),
-                    i.getProducto().getPrecio()))
-            .collect(Collectors.toList());
+    private OrdenCompraDTO mapToDTO(OrdenCompra o) {
 
-    return new OrdenCompraDTO(
-            o.getIdOrden(),
-            o.getFechaCompra(),
-            productos,
-            o.getTotalCompra(),
-            o.getEstado());
+        // Assuming the field is named 'items' in OrdenCompra and is accessible
+        List<OrdenProducto> items = null;
+        try {
+            items = (List<OrdenProducto>) OrdenCompra.class.getMethod("getItems").invoke(o);
+        } catch (Exception e) {
+            // fallback: try to access the field directly if no getter exists
+            try {
+                java.lang.reflect.Field field = OrdenCompra.class.getDeclaredField("items");
+                field.setAccessible(true);
+                items = (List<OrdenProducto>) field.get(o);
+            } catch (Exception ex) {
+                items = List.of();
+            }
+        }
+
+        List<ProductosDTO> productos = (items == null ? List.<OrdenProducto>of() : items)
+                .stream()
+                .map(i -> new ProductosDTO(
+                        i.getProducto().getIdProducto(),
+                        i.getProducto().getNombre(),
+                        i.getProducto().getDescripcion(),
+                        i.getProducto().getPrecio()))
+                .collect(Collectors.toList());
+
+        return new OrdenCompraDTO(
+                o.getIdOrden(),
+                o.getFechaCompra(),
+                productos,
+                o.getTotalCompra(),
+                o.getEstado());
     }
 }

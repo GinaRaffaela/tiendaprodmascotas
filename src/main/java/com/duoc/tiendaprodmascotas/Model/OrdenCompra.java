@@ -27,8 +27,8 @@ public class OrdenCompra {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fechaCompra;
 
-    @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrdenProducto> items = new ArrayList<>();
+    @OneToMany(mappedBy = "orden", cascade = CascadeType.ALL)
+    private List<OrdenProducto> productos;
 
     @Column(name = "totalCompra")
     private Integer totalCompra;
@@ -52,19 +52,19 @@ public class OrdenCompra {
         this.fechaCompra = fechaCompra;
     }
 
-    public List<OrdenProducto> getItems() {
-        return items;
+    public List<OrdenProducto> getProducto() {
+        return productos;
     }
 
-    public void setItems(List<OrdenProducto> items) {
-        this.items = items;
+    public void setProducto(List<OrdenProducto> productos) {
+        this.productos = productos;
     }
 
-    public Integer getTotalCompra() {
+    public int getTotalCompra() {
         return totalCompra;
     }
 
-    public void setTotalCompra(Integer totalCompra) {
+    public void setTotalCompra(int totalCompra) {
         this.totalCompra = totalCompra;
     }
 

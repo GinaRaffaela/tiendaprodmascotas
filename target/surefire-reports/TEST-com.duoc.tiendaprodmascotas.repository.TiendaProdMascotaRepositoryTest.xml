@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest" time="2.237" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\test-classes;D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes;C:\Users\matia\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.3\jackson-databind-2.17.3.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.3\jackson-annotations-2.17.3.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.3\jackson-core-2.17.3.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.3.6\spring-boot-starter-actuator-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter\3.3.6\spring-boot-starter-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.3.6\spring-boot-starter-logging-3.3.6.jar;C:\Users\matia\.m2\repository\ch\qos\logback\logback-classic\1.5.12\logback-classic-1.5.12.jar;C:\Users\matia\.m2\repository\ch\qos\logback\logback-core\1.5.12\logback-core-1.5.12.jar;C:\Users\matia\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar;C:\Users\matia\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar;C:\Users\matia\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;C:\Users\matia\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\matia\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.3.6\spring-boot-actuator-autoconfigure-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-actuator\3.3.6\spring-boot-actuator-3.3.6.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.3\jackson-datatype-jsr310-2.17.3.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-observation\1.13.8\micrometer-observation-1.13.8.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-commons\1.13.8\micrometer-commons-1.13.8.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-jakarta9\1.13.8\micrometer-jakarta9-1.13.8.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-core\1.13.8\micrometer-core-1.13.8.jar;C:\Users\matia\.m2\repository\org\hdrhistogram\HdrHistogram\2.2.2\HdrHistogram-2.2.2.jar;C:\Users\matia\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-devtools\3.3.6\spring-boot-devtools-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot\3.3.6\spring-boot-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\spring-context\6.1.15\spring-context-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-expression\6.1.15\spring-expression-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.6\spring-boot-autoconfigure-3.3.6.jar;C:\Users\matia\.m2\repository\org\projectlombok\lombok\1.18.36\lombok-1.18.36.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.3.6\spring-boot-starter-data-jpa-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.3.6\spring-boot-starter-aop-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\spring-aop\6.1.15\spring-aop-6.1.15.jar;C:\Users\matia\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.6\spring-boot-starter-jdbc-3.3.6.jar;C:\Users\matia\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\matia\.m2\repository\org\springframework\spring-jdbc\6.1.15\spring-jdbc-6.1.15.jar;C:\Users\matia\.m2\repository\org\hibernate\orm\hibernate-core\6.5.3.Final\hibernate-core-6.5.3.Final.jar;C:\Users\matia\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\matia\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\matia\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\matia\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\matia\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\matia\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\matia\.m2\repository\net\bytebuddy\byte-buddy\1.14.19\byte-buddy-1.14.19.jar;C:\Users\matia\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\matia\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\matia\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\matia\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\matia\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\matia\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\matia\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\matia\.m2\repository\org\springframework\data\spring-data-jpa\3.3.6\spring-data-jpa-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\data\spring-data-commons\3.3.6\spring-data-commons-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\spring-orm\6.1.15\spring-orm-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-tx\6.1.15\spring-tx-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-beans\6.1.15\spring-beans-6.1.15.jar;C:\Users\matia\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\matia\.m2\repository\org\springframework\spring-aspects\6.1.15\spring-aspects-6.1.15.jar;C:\Users\matia\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\jdbc\ucp11\21.9.0.0\ucp11-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\jdbc\rsi\21.9.0.0\rsi-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\ha\simplefan\21.9.0.0\simplefan-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\ha\ons\21.9.0.0\ons-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\nls\orai18n\21.9.0.0\orai18n-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\xml\xdb\21.9.0.0\xdb-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\xml\xmlparserv2\21.9.0.0\xmlparserv2-21.9.0.0.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-hateoas\3.3.6\spring-boot-starter-hateoas-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.3.6\spring-boot-starter-web-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.3.6\spring-boot-starter-json-3.3.6.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.3\jackson-datatype-jdk8-2.17.3.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.3\jackson-module-parameter-names-2.17.3.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.6\spring-boot-starter-tomcat-3.3.6.jar;C:\Users\matia\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.33\tomcat-embed-core-10.1.33.jar;C:\Users\matia\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.33\tomcat-embed-el-10.1.33.jar;C:\Users\matia\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.33\tomcat-embed-websocket-10.1.33.jar;C:\Users\matia\.m2\repository\org\springframework\spring-web\6.1.15\spring-web-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-webmvc\6.1.15\spring-webmvc-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\hateoas\spring-hateoas\2.3.3\spring-hateoas-2.3.3.jar;C:\Users\matia\.m2\repository\org\springframework\plugin\spring-plugin-core\3.0.0\spring-plugin-core-3.0.0.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.3.6\spring-boot-starter-test-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-test\3.3.6\spring-boot-test-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.3.6\spring-boot-test-autoconfigure-3.3.6.jar;C:\Users\matia\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\matia\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\matia\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\matia\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\matia\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\matia\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\matia\.m2\repository\org\assertj\assertj-core\3.25.3\assertj-core-3.25.3.jar;C:\Users\matia\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\matia\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.5\junit-jupiter-5.10.5.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.5\junit-jupiter-api-5.10.5.jar;C:\Users\matia\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\matia\.m2\repository\org\junit\platform\junit-platform-commons\1.10.5\junit-platform-commons-1.10.5.jar;C:\Users\matia\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.5\junit-jupiter-params-5.10.5.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.5\junit-jupiter-engine-5.10.5.jar;C:\Users\matia\.m2\repository\org\junit\platform\junit-platform-engine\1.10.5\junit-platform-engine-1.10.5.jar;C:\Users\matia\.m2\repository\org\mockito\mockito-core\5.11.0\mockito-core-5.11.0.jar;C:\Users\matia\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar;C:\Users\matia\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\matia\.m2\repository\org\mockito\mockito-junit-jupiter\5.11.0\mockito-junit-jupiter-5.11.0.jar;C:\Users\matia\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\matia\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\matia\.m2\repository\org\springframework\spring-core\6.1.15\spring-core-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-jcl\6.1.15\spring-jcl-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-test\6.1.15\spring-test-6.1.15.jar;C:\Users\matia\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\matia\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\matia\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\security\osdt_cert\21.5.0.0\osdt_cert-21.5.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\security\osdt_core\21.5.0.0\osdt_core-21.5.0.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Santiago"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin"/>
+    <property name="sun.java.command" value="C:\Users\matia\AppData\Local\Temp\surefire3769792009403414414\surefirebooter-20260501210725091_3.jar C:\Users\matia\AppData\Local\Temp\surefire3769792009403414414 2026-05-01T21-07-24_983-jvmRun1 surefire-20260501210725091_1tmp surefire_0-20260501210725091_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\test-classes;D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes;C:\Users\matia\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.3\jackson-databind-2.17.3.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.3\jackson-annotations-2.17.3.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.3\jackson-core-2.17.3.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.3.6\spring-boot-starter-actuator-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter\3.3.6\spring-boot-starter-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.3.6\spring-boot-starter-logging-3.3.6.jar;C:\Users\matia\.m2\repository\ch\qos\logback\logback-classic\1.5.12\logback-classic-1.5.12.jar;C:\Users\matia\.m2\repository\ch\qos\logback\logback-core\1.5.12\logback-core-1.5.12.jar;C:\Users\matia\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar;C:\Users\matia\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar;C:\Users\matia\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;C:\Users\matia\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\matia\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.3.6\spring-boot-actuator-autoconfigure-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-actuator\3.3.6\spring-boot-actuator-3.3.6.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.3\jackson-datatype-jsr310-2.17.3.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-observation\1.13.8\micrometer-observation-1.13.8.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-commons\1.13.8\micrometer-commons-1.13.8.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-jakarta9\1.13.8\micrometer-jakarta9-1.13.8.jar;C:\Users\matia\.m2\repository\io\micrometer\micrometer-core\1.13.8\micrometer-core-1.13.8.jar;C:\Users\matia\.m2\repository\org\hdrhistogram\HdrHistogram\2.2.2\HdrHistogram-2.2.2.jar;C:\Users\matia\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-devtools\3.3.6\spring-boot-devtools-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot\3.3.6\spring-boot-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\spring-context\6.1.15\spring-context-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-expression\6.1.15\spring-expression-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.6\spring-boot-autoconfigure-3.3.6.jar;C:\Users\matia\.m2\repository\org\projectlombok\lombok\1.18.36\lombok-1.18.36.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.3.6\spring-boot-starter-data-jpa-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.3.6\spring-boot-starter-aop-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\spring-aop\6.1.15\spring-aop-6.1.15.jar;C:\Users\matia\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.6\spring-boot-starter-jdbc-3.3.6.jar;C:\Users\matia\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\matia\.m2\repository\org\springframework\spring-jdbc\6.1.15\spring-jdbc-6.1.15.jar;C:\Users\matia\.m2\repository\org\hibernate\orm\hibernate-core\6.5.3.Final\hibernate-core-6.5.3.Final.jar;C:\Users\matia\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\matia\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\matia\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\matia\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\matia\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\matia\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\matia\.m2\repository\net\bytebuddy\byte-buddy\1.14.19\byte-buddy-1.14.19.jar;C:\Users\matia\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\matia\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\matia\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\matia\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\matia\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\matia\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\matia\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\matia\.m2\repository\org\springframework\data\spring-data-jpa\3.3.6\spring-data-jpa-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\data\spring-data-commons\3.3.6\spring-data-commons-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\spring-orm\6.1.15\spring-orm-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-tx\6.1.15\spring-tx-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-beans\6.1.15\spring-beans-6.1.15.jar;C:\Users\matia\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\matia\.m2\repository\org\springframework\spring-aspects\6.1.15\spring-aspects-6.1.15.jar;C:\Users\matia\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\jdbc\ucp11\21.9.0.0\ucp11-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\jdbc\rsi\21.9.0.0\rsi-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\ha\simplefan\21.9.0.0\simplefan-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\ha\ons\21.9.0.0\ons-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\nls\orai18n\21.9.0.0\orai18n-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\xml\xdb\21.9.0.0\xdb-21.9.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\xml\xmlparserv2\21.9.0.0\xmlparserv2-21.9.0.0.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-hateoas\3.3.6\spring-boot-starter-hateoas-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.3.6\spring-boot-starter-web-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.3.6\spring-boot-starter-json-3.3.6.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.3\jackson-datatype-jdk8-2.17.3.jar;C:\Users\matia\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.3\jackson-module-parameter-names-2.17.3.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.6\spring-boot-starter-tomcat-3.3.6.jar;C:\Users\matia\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.33\tomcat-embed-core-10.1.33.jar;C:\Users\matia\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.33\tomcat-embed-el-10.1.33.jar;C:\Users\matia\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.33\tomcat-embed-websocket-10.1.33.jar;C:\Users\matia\.m2\repository\org\springframework\spring-web\6.1.15\spring-web-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-webmvc\6.1.15\spring-webmvc-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\hateoas\spring-hateoas\2.3.3\spring-hateoas-2.3.3.jar;C:\Users\matia\.m2\repository\org\springframework\plugin\spring-plugin-core\3.0.0\spring-plugin-core-3.0.0.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.3.6\spring-boot-starter-test-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-test\3.3.6\spring-boot-test-3.3.6.jar;C:\Users\matia\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.3.6\spring-boot-test-autoconfigure-3.3.6.jar;C:\Users\matia\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\matia\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\matia\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\matia\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\matia\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\matia\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\matia\.m2\repository\org\assertj\assertj-core\3.25.3\assertj-core-3.25.3.jar;C:\Users\matia\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\matia\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.5\junit-jupiter-5.10.5.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.5\junit-jupiter-api-5.10.5.jar;C:\Users\matia\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\matia\.m2\repository\org\junit\platform\junit-platform-commons\1.10.5\junit-platform-commons-1.10.5.jar;C:\Users\matia\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.5\junit-jupiter-params-5.10.5.jar;C:\Users\matia\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.5\junit-jupiter-engine-5.10.5.jar;C:\Users\matia\.m2\repository\org\junit\platform\junit-platform-engine\1.10.5\junit-platform-engine-1.10.5.jar;C:\Users\matia\.m2\repository\org\mockito\mockito-core\5.11.0\mockito-core-5.11.0.jar;C:\Users\matia\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar;C:\Users\matia\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\matia\.m2\repository\org\mockito\mockito-junit-jupiter\5.11.0\mockito-junit-jupiter-5.11.0.jar;C:\Users\matia\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\matia\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\matia\.m2\repository\org\springframework\spring-core\6.1.15\spring-core-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-jcl\6.1.15\spring-jcl-6.1.15.jar;C:\Users\matia\.m2\repository\org\springframework\spring-test\6.1.15\spring-test-6.1.15.jar;C:\Users\matia\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\matia\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\matia\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\security\osdt_cert\21.5.0.0\osdt_cert-21.5.0.0.jar;C:\Users\matia\.m2\repository\com\oracle\database\security\osdt_core\21.5.0.0\osdt_core-21.5.0.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\matia"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\matia\AppData\Local\Temp\surefire3769792009403414414\surefirebooter-20260501210725091_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.10+8-LTS-217"/>
+    <property name="user.name" value="matia"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\matia\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\matia\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.10"/>
+    <property name="user.dir" value="D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="SkipTests" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="32508"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.15\bin;C:\Users\matia\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2025.3.4\bin;C:\Users\matia\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\matia\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\matia\AppData\Local\Programs\Antigravity\bin;C:\Users\matia\AppData\Roaming\npm;c:\Users\matia\.antigravity\extensions\vscjava.vscode-java-debug-0.59.0-universal\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.10+8-LTS-217"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[tiendaprodmascotas] "/>
+  </properties>
+  <testcase name="testRepositoryLoads" classname="com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest" time="0.028">
+    <system-out><![CDATA[2026-05-01T21:07:29.120-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [TiendaProdMascotaRepositoryTest]: using SpringBootContextLoader
+2026-05-01T21:07:29.120-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-05-01T21:07:29.120-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest]: TiendaProdMascotaRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-01T21:07:29.122-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [TiendaProdMascotaRepositoryTest]: [ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+2026-05-01T21:07:29.131-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Using ContextCustomizers for test class [TiendaProdMascotaRepositoryTest]: [ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, OnFailureConditionReportContextCustomizer, DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
+2026-05-01T21:07:29.138-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] ssPathScanningCandidateComponentProvider : Identified candidate component class: file [D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes\com\duoc\tiendaprodmascotas\TiendaprodmascotasApplication.class]
+2026-05-01T21:07:29.138-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duoc.tiendaprodmascotas.TiendaprodmascotasApplication for test class com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest
+2026-05-01T21:07:29.139-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] .s.t.c.u.TestContextSpringFactoriesUtils : Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+2026-05-01T21:07:29.139-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] b.t.a.o.j.DataJpaTestContextBootstrapper : Using TestExecutionListeners for test class [TiendaProdMascotaRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+2026-05-01T21:07:29.139-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] sContextBeforeModesTestExecutionListener : Before test class: class [TiendaProdMascotaRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
+2026-05-01T21:07:29.139-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest
+2026-05-01T21:07:29.141-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2026-05-01T21:07:29.157-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.boot.ApplicationEnvironment          : Activating profiles []
+2026-05-01T21:07:29.159-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'spring.application.name' in PropertySource 'configurationProperties' with value of type String
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2026-05-01T21:07:29.169-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] c.d.t.r.TiendaProdMascotaRepositoryTest  : Starting TiendaProdMascotaRepositoryTest using Java 21.0.10 with PID 32508 (started by matia in D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas)
+2026-05-01T21:07:29.169-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] c.d.t.r.TiendaProdMascotaRepositoryTest  : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T21:07:29.169-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.boot.SpringApplication               : Loading source class com.duoc.tiendaprodmascotas.TiendaprodmascotasApplication
+2026-05-01T21:07:29.170-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@75f4d8a8
+2026-05-01T21:07:29.171-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2026-05-01T21:07:29.171-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2026-05-01T21:07:29.404-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T21:07:29.410-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2026-05-01T21:07:29.410-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.duoc.tiendaprodmascotas'. Automatic @Repository and @Entity scanning is enabled.
+2026-05-01T21:07:29.410-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Scanning for JPA repositories in packages com.duoc.tiendaprodmascotas.
+2026-05-01T21:07:29.419-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes\com\duoc\tiendaprodmascotas\Repository\OrdenCompraRepository.class]
+2026-05-01T21:07:29.419-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes\com\duoc\tiendaprodmascotas\Repository\OrdenProductoRepository.class]
+2026-05-01T21:07:29.419-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes\com\duoc\tiendaprodmascotas\Repository\ProductosRepository.class]
+2026-05-01T21:07:29.439-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] ssPathScanningCandidateComponentProvider : Identified candidate component class: file [D:\Duoc\clases amorcito\fullstack\tiendaprodmascotas\target\classes\com\duoc\tiendaprodmascotas\Service\Impl\TiendaProdMascotasServiceImpl.class]
+2026-05-01T21:07:29.454-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2026-05-01T21:07:29.489-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.context.ImportsContextCustomizer$ImportsCleanupPostProcessor'
+2026-05-01T21:07:29.491-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2026-05-01T21:07:29.492-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'emBeanDefinitionRegistrarPostProcessor'
+2026-05-01T21:07:29.492-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor'
+2026-05-01T21:07:29.507-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2026-05-01T21:07:29.508-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2026-05-01T21:07:29.508-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2026-05-01T21:07:29.509-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2026-05-01T21:07:29.509-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2026-05-01T21:07:29.510-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2026-05-01T21:07:29.510-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2026-05-01T21:07:29.510-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcConnectionDetailsHikariBeanPostProcessor'
+2026-05-01T21:07:29.510-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2026-05-01T21:07:29.510-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2026-05-01T21:07:29.511-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2026-05-01T21:07:29.515-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSourceScriptDatabaseInitializer'
+2026-05-01T21:07:29.516-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration'
+2026-05-01T21:07:29.516-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2026-05-01T21:07:29.516-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2026-05-01T21:07:29.528-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionAttributeSource'
+2026-05-01T21:07:29.530-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionInterceptor'
+2026-05-01T21:07:29.530-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+2026-05-01T21:07:29.534-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+2026-05-01T21:07:29.535-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+2026-05-01T21:07:29.539-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSource'
+2026-05-01T21:07:29.540-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari'
+2026-05-01T21:07:29.541-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2026-05-01T21:07:29.541-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+2026-05-01T21:07:29.552-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcConnectionDetails'
+2026-05-01T21:07:29.552-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration'
+2026-05-01T21:07:29.553-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcConnectionDetails' via factory method to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2026-05-01T21:07:29.555-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSource' via factory method to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2026-05-01T21:07:29.555-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSource' via factory method to bean named 'jdbcConnectionDetails'
+2026-05-01T21:07:29.729-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2026-05-01T21:07:29.731-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'dataSource'
+2026-05-01T21:07:29.732-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2026-05-01T21:07:29.742-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'entityManagerFactory'
+2026-05-01T21:07:29.743-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration'
+2026-05-01T21:07:29.743-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties'
+2026-05-01T21:07:29.744-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties'
+2026-05-01T21:07:29.746-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'dataSource'
+2026-05-01T21:07:29.746-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties'
+2026-05-01T21:07:29.746-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@7f53fc38'
+2026-05-01T21:07:29.746-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties'
+2026-05-01T21:07:29.752-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'oracleUcpPoolDataSourceMetadataProvider'
+2026-05-01T21:07:29.752-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$OracleUcpPoolDataSourceMetadataProviderConfiguration'
+2026-05-01T21:07:29.753-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'hikariPoolDataSourceMetadataProvider'
+2026-05-01T21:07:29.753-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration'
+2026-05-01T21:07:29.757-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'entityManagerFactoryBuilder'
+2026-05-01T21:07:29.757-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpaVendorAdapter'
+2026-05-01T21:07:29.775-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'entityManagerFactoryBuilder' via factory method to bean named 'jpaVendorAdapter'
+2026-05-01T21:07:29.779-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'persistenceManagedTypes'
+2026-05-01T21:07:29.780-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'persistenceManagedTypes' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@7f53fc38'
+2026-05-01T21:07:29.780-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'persistenceManagedTypes' via factory method to bean named 'org.springframework.context.annotation.AnnotationConfigApplicationContext@75f4d8a8'
+2026-05-01T21:07:29.789-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'entityManagerFactory' via factory method to bean named 'entityManagerFactoryBuilder'
+2026-05-01T21:07:29.789-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'entityManagerFactory' via factory method to bean named 'persistenceManagedTypes'
+2026-05-01T21:07:29.809-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:07:29.832-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-01T21:07:29.901-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-05-01T21:07:29.960-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-01T21:07:30.071-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T21:07:30.091-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-01T21:07:30.093-04:00  WARN 32508 --- [tiendaprodmascotas] [           main] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2026-05-01T21:07:30.342-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@1b06dc57
+2026-05-01T21:07:30.343-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-01T21:07:31.082-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T21:07:31.085-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T21:07:31.087-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'tiendaprodmascotasApplication'
+2026-05-01T21:07:31.087-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration'
+2026-05-01T21:07:31.087-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration'
+2026-05-01T21:07:31.089-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration'
+2026-05-01T21:07:31.089-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter'
+2026-05-01T21:07:31.089-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$PersistenceManagedTypesConfiguration'
+2026-05-01T21:07:31.090-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionManager'
+2026-05-01T21:07:31.096-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration'
+2026-05-01T21:07:31.096-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration'
+2026-05-01T21:07:31.096-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
+2026-05-01T21:07:31.112-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.jpa.util.JpaMetamodelCacheCleanup'
+2026-05-01T21:07:31.113-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.jpa.repository.support.JpaEvaluationContextExtension'
+2026-05-01T21:07:31.115-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#0'
+2026-05-01T21:07:31.116-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.OrdenProductoRepository.fragments#0'
+2026-05-01T21:07:31.117-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'ordenProductoRepository'
+2026-05-01T21:07:31.126-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpaMappingContext'
+2026-05-01T21:07:31.128-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] .c.JpaMetamodelMappingContextFactoryBean : Initializing JpaMetamodelMappingContext…
+2026-05-01T21:07:31.138-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] .c.JpaMetamodelMappingContextFactoryBean : Finished initializing JpaMetamodelMappingContext
+2026-05-01T21:07:31.155-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.181-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.215-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.duoc.tiendaprodmascotas.Repository.OrdenProductoRepository…
+2026-05-01T21:07:31.228-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.257-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query OrdenProducto.findByOrdenIdOrden
+2026-05-01T21:07:31.258-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query OrdenProducto.findByOrdenIdOrden
+2026-05-01T21:07:31.260-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.290-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.duoc.tiendaprodmascotas.Repository.OrdenProductoRepository.
+2026-05-01T21:07:31.290-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#1'
+2026-05-01T21:07:31.291-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.OrdenCompraRepository.fragments#0'
+2026-05-01T21:07:31.291-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'ordenCompraRepository'
+2026-05-01T21:07:31.292-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.292-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.duoc.tiendaprodmascotas.Repository.OrdenCompraRepository…
+2026-05-01T21:07:31.292-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.295-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.duoc.tiendaprodmascotas.Repository.OrdenCompraRepository.
+2026-05-01T21:07:31.295-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#2'
+2026-05-01T21:07:31.296-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.ProductosRepository.fragments#0'
+2026-05-01T21:07:31.296-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'productosRepository'
+2026-05-01T21:07:31.297-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.297-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.duoc.tiendaprodmascotas.Repository.ProductosRepository…
+2026-05-01T21:07:31.297-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2026-05-01T21:07:31.300-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.duoc.tiendaprodmascotas.Repository.ProductosRepository.
+2026-05-01T21:07:31.300-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'data-jpa.repository-aot-processor#0'
+2026-05-01T21:07:31.304-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateConfiguration'
+2026-05-01T21:07:31.304-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcTemplate'
+2026-05-01T21:07:31.304-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2026-05-01T21:07:31.305-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'dataSource'
+2026-05-01T21:07:31.305-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2026-05-01T21:07:31.311-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcTemplateConfiguration'
+2026-05-01T21:07:31.311-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'namedParameterJdbcTemplate'
+2026-05-01T21:07:31.312-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'namedParameterJdbcTemplate' via factory method to bean named 'jdbcTemplate'
+2026-05-01T21:07:31.315-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration'
+2026-05-01T21:07:31.315-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcClientAutoConfiguration'
+2026-05-01T21:07:31.316-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcClient'
+2026-05-01T21:07:31.316-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcClient' via factory method to bean named 'namedParameterJdbcTemplate'
+2026-05-01T21:07:31.316-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration'
+2026-05-01T21:07:31.316-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$JdbcTransactionManagerConfiguration'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionTemplate'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionTemplate' via factory method to bean named 'transactionManager'
+2026-05-01T21:07:31.317-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration'
+2026-05-01T21:07:31.319-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration'
+2026-05-01T21:07:31.319-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'testEntityManager'
+2026-05-01T21:07:31.319-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'testEntityManager' via factory method to bean named 'entityManagerFactory'
+2026-05-01T21:07:31.320-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2026-05-01T21:07:31.320-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2026-05-01T21:07:31.322-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.jdbc.JdbcConnectionDetails; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceConfiguration.Hikari matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+      - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceInitializationConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer,org.springframework.boot.autoconfigure.sql.init.SqlR2dbcScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   HibernateJpaAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'jakarta.persistence.EntityManager', 'org.hibernate.engine.spi.SessionImplementor' (OnClassCondition)
+
+   HibernateJpaConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcClientAutoConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactoryBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#jpaVendorAdapter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#transactionManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration#persistenceManagedTypes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.persistenceunit.PersistenceManagedTypes; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaRepositoriesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+      - @ConditionalOnProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration NONE cache type (CacheCondition)
+
+   SqlInitializationAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.sql.init.enabled) matched (OnPropertyCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on SqlInitializationAutoConfiguration.SqlInitializationModeCondition.ModeIsNever @ConditionalOnProperty (spring.sql.init.mode=never) did not find property 'mode' (SqlInitializationAutoConfiguration.SqlInitializationModeCondition)
+
+   TestEntityManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.persistence.EntityManagerFactory' (OnClassCondition)
+
+   TestEntityManagerAutoConfiguration#testEntityManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   Cache2kCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.cache2k.Cache2kBuilder' (OnClassCondition)
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+      Did not match:
+         - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceCheckpointRestoreConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+   DataSourceConfiguration.Dbcp2:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourceConfiguration.Generic:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+   DataSourceConfiguration.OracleUcp:
+      Did not match:
+         - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) found beans of type 'javax.sql.DataSource' dataSource (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+         - @ConditionalOnProperty (spring.datasource.type=oracle.ucp.jdbc.PoolDataSource) matched (OnPropertyCondition)
+
+   DataSourceConfiguration.Tomcat:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceJmxConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.jmx.enabled=true) found different value in property 'enabled' (OnPropertyCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' transactionManager (OnBeanCondition)
+
+   FlywayAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+
+   GenericCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration unknown cache type (CacheCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.cache.Caching' (OnClassCondition)
+
+   JpaBaseConfiguration.JpaWebConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.LazyBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=lazy) found different value in property 'bootstrap-mode'; NestedCondition on JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.DeferredBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) found different value in property 'bootstrap-mode' (JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition)
+
+   LiquibaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'liquibase.change.DatabaseChange' (OnClassCondition)
+
+   R2dbcInitializationConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'io.r2dbc.spi.ConnectionFactory', 'org.springframework.r2dbc.connection.init.DatabasePopulator' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   SimpleCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration unknown cache type (CacheCondition)
+
+   TestDatabaseAutoConfiguration#dataSource:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=AUTO_CONFIGURED) found different value in property 'replace' (OnPropertyCondition)
+
+   TestDatabaseAutoConfiguration#embeddedDataSourceBeanFactoryPostProcessor:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=ANY) found different value in property 'replace' (OnPropertyCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.aop.proxy-target-class=false) did not find property 'proxy-target-class' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration
+
+
+
+2026-05-01T21:07:31.322-04:00  INFO 32508 --- [tiendaprodmascotas] [           main] c.d.t.r.TiendaProdMascotaRepositoryTest  : Started TiendaProdMascotaRepositoryTest in 2.181 seconds (process running for 6.039)
+2026-05-01T21:07:31.323-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.324-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 13, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.325-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] sContextBeforeModesTestExecutionListener : Before test method: class [TiendaProdMascotaRepositoryTest], method [testRepositoryLoads], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2026-05-01T21:07:31.331-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] t.c.t.TransactionalTestExecutionListener : Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest] and test method [testRepositoryLoads]
+2026-05-01T21:07:31.332-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 14, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.333-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] t.c.t.TransactionalTestExecutionListener : No method-level @Rollback override: using default rollback [true] for test method [void com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest.testRepositoryLoads()]
+2026-05-01T21:07:31.335-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest.testRepositoryLoads]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-05-01T21:07:31.336-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(1996111320<open>)] for JPA transaction
+2026-05-01T21:07:31.342-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@745c25ed]
+2026-05-01T21:07:31.343-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test class [com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest]; test method [testRepositoryLoads]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@42718ebf]; rollback [true]
+2026-05-01T21:07:31.343-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 15, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.343-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 16, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.344-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 17, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.348-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 18, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.349-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 19, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.349-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 20, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.349-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 21, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.349-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 22, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.349-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6aad919c size = 2, maxSize = 32, parentContextCount = 0, hitCount = 23, missCount = 2, failureCount = 0]
+2026-05-01T21:07:31.350-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2026-05-01T21:07:31.350-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1996111320<open>)]
+2026-05-01T21:07:31.353-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(1996111320<open>)] after transaction
+2026-05-01T21:07:31.353-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction (1) for test class [com.duoc.tiendaprodmascotas.repository.TiendaProdMascotaRepositoryTest]; test method [testRepositoryLoads]
+2026-05-01T21:07:31.353-04:00 DEBUG 32508 --- [tiendaprodmascotas] [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [TiendaProdMascotaRepositoryTest], method [testRepositoryLoads], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,14 @@
+com\duoc\tiendaprodmascotas\Model\OrdenProducto.class
+com\duoc\tiendaprodmascotas\DTO\ProductosDTO.class
+com\duoc\tiendaprodmascotas\Model\OrdenCompra.class
+com\duoc\tiendaprodmascotas\Exception\ResourceNotFoundException.class
+com\duoc\tiendaprodmascotas\Controller\TiendaProdMascotasController.class
+com\duoc\tiendaprodmascotas\Model\Productos.class
+com\duoc\tiendaprodmascotas\Repository\OrdenCompraRepository.class
+com\duoc\tiendaprodmascotas\TiendaprodmascotasApplication.class
+com\duoc\tiendaprodmascotas\Exception\GlobalExceptionHandler.class
+com\duoc\tiendaprodmascotas\Repository\ProductosRepository.class
+com\duoc\tiendaprodmascotas\Service\TiendaProdMascotasService.class
+com\duoc\tiendaprodmascotas\Repository\OrdenProductoRepository.class
+com\duoc\tiendaprodmascotas\Service\Impl\TiendaProdMascotasServiceImpl.class
+com\duoc\tiendaprodmascotas\DTO\OrdenCompraDTO.class

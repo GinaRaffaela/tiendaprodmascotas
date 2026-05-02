@@ -1,0 +1,4 @@
+com\duoc\tiendaprodmascotas\repository\TiendaProdMascotaRepositoryTest.class
+com\duoc\tiendaprodmascotas\controller\TiendaProdMascotaControllerTest.class
+com\duoc\tiendaprodmascotas\service\TiendaProdMascotasServiceTest.class
+com\duoc\tiendaprodmascotas\TiendaprodmascotasApplicationTests.class
