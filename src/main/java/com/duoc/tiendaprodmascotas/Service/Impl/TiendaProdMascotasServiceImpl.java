@@ -90,6 +90,11 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
 
         ordenProductoRepository.save(item);
 
+        if (orden.getProducto() == null) {
+            orden.setProducto(new java.util.ArrayList<>());
+        }
+        orden.getProducto().add(item);
+
         orden.setTotalCompra(orden.getTotalCompra() + producto.getPrecio());
 
         return mapToDTO(ordenCompraRepository.save(orden));
@@ -145,20 +150,7 @@ public class TiendaProdMascotasServiceImpl implements TiendaProdMascotasService 
 
     private OrdenCompraDTO mapToDTO(OrdenCompra o) {
 
-        // Assuming the field is named 'items' in OrdenCompra and is accessible
-        List<OrdenProducto> items = null;
-        try {
-            items = (List<OrdenProducto>) OrdenCompra.class.getMethod("getItems").invoke(o);
-        } catch (Exception e) {
-            // fallback: try to access the field directly if no getter exists
-            try {
-                java.lang.reflect.Field field = OrdenCompra.class.getDeclaredField("items");
-                field.setAccessible(true);
-                items = (List<OrdenProducto>) field.get(o);
-            } catch (Exception ex) {
-                items = List.of();
-            }
-        }
+        List<OrdenProducto> items = o.getProducto();
 
         List<ProductosDTO> productos = (items == null ? List.<OrdenProducto>of() : items)
                 .stream()
