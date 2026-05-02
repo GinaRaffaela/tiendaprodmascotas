@@ -28,4 +28,16 @@ public class TiendaProdMascotasServiceTest {
         when(productosRepository.findAll()).thenReturn(Collections.emptyList());
         assertEquals(0, tiendaProdMascotasService.getProductos().size());
     }
+
+    @Test
+    void testGetProductosWithData() {
+        com.duoc.tiendaprodmascotas.Model.Productos p = new com.duoc.tiendaprodmascotas.Model.Productos();
+        p.setIdProducto(1L);
+        p.setNombre("Test");
+        p.setDescripcion("Test desc");
+        p.setPrecio(100);
+        when(productosRepository.findAll()).thenReturn(Collections.singletonList(p));
+        assertEquals(1, tiendaProdMascotasService.getProductos().size());
+        assertEquals("Test", tiendaProdMascotasService.getProductos().get(0).getNombre());
+    }
 }

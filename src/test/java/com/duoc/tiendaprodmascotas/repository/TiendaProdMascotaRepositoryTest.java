@@ -20,4 +20,9 @@ public class TiendaProdMascotaRepositoryTest {
     void testRepositoryLoads() {
         assertNotNull(productosRepository);
     }
+
+    @Test
+    void testFindAllEmpty() {
+        assertNotNull(productosRepository.findAll());
+    }
 }

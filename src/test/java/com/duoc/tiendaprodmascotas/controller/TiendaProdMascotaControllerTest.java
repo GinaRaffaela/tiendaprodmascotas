@@ -26,4 +26,10 @@ public class TiendaProdMascotaControllerTest {
         mockMvc.perform(get("/productos"))
                .andExpect(status().isOk());
     }
+
+    @Test
+    void testGetOrdenesEndpoint() throws Exception {
+        mockMvc.perform(get("/ordenes"))
+               .andExpect(status().isOk());
+    }
 }
